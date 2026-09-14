@@ -357,11 +357,7 @@
     <button class="navbtn" data-v="sop"><span class="n">03</span>SOP 미션카드 · 16분야</button>
     <div class="grp">진단 · 도구</div>
     <button class="navbtn" data-v="type"><span class="n">04</span>FM 유형 진단</button>
-    <button class="navbtn" data-v="check"><span class="n">05</span>현장실사 체크리스트</button>
-    <div class="grp">참고</div>
-    <button class="navbtn" data-v="cost"><span class="n">06</span>FM 원가계산표</button>
-    <button class="navbtn" data-v="clean"><span class="n">07</span>청소 도급비 계산표</button>
-    <button class="navbtn" data-v="quote"><span class="n">08</span>건물관리 견적 (입력형)</button>
+    <button class="navbtn" data-v="check"><span class="n">05</span>미팅 체크리스트</button>
   </nav>
 
   <main>
@@ -484,9 +480,9 @@
 
     <!-- ============ 05 CHECKLIST ============ -->
     <section class="view" id="v-check">
-      <div class="eyebrow">05 · Site Survey Checklist</div>
-      <div class="vhead"><h2>클리니어빌딩 현장실사 체크리스트</h2></div>
-      <p class="lead">미팅·현장실사에서 건물의 관리 수준을 바로 점검하는 <b>50문항 · 10영역</b> 체크리스트. 각 문항 <span class="mono">3·2·1·0</span>점으로 응답하면 영역별·총점과 등급이 실시간 계산됩니다. 화면에서만 계산되며 저장·전송되지 않습니다.</p>
+      <div class="eyebrow">05 · Meeting Checklist</div>
+      <div class="vhead"><h2>클리니어빌딩 미팅 체크리스트</h2></div>
+      <p class="lead">미팅에서 건물의 관리 수준을 바로 점검하는 <b>50문항 · 10영역</b> 체크리스트. 각 문항 <span class="mono">3·2·1·0</span>점으로 응답하면 영역별·총점과 등급이 실시간 계산됩니다. 화면에서만 계산되며 저장·전송되지 않습니다.</p>
 
       <div class="cl-score">
         <div class="big">합계 <b id="clTot">0</b> <span style="color:var(--muted)">/ 150</span></div>
@@ -494,7 +490,7 @@
         <div class="bar"><i id="clBar"></i></div>
         <span class="mono note" id="clCount">0 / 50 문항</span>
         <button id="clReset">초기화</button>
-        <button id="clPrint">인쇄 / PDF</button>
+        <button id="clPrint">인쇄 / PDF (Ctrl+P)</button>
       </div>
       <div class="gradekey" style="margin:-8px 0 18px">
         <span class="gk">A · 135↑ 안정적 운영</span>
@@ -504,180 +500,7 @@
         <span class="gk">문항당 3점 잘운영 / 2점 일부 / 1점 미흡 / 0점 미운영</span>
       </div>
       <div id="checklist"></div>
-      <p class="disc">원본 — ksmatefm.com/fm-self-diagnosis-checklist (50문항·150점). 클리니어빌딩 현장실사용으로 재구성. 진단 결과는 관리 수준 참고 지표이며 법정 적합성을 보장하지 않음. 법정 의무는 건물 용도·규모·적용 법령에 따라 별도 확인.</p>
-    </section>
-
-    <!-- ============ 06 COST ENGINE ============ -->
-    <section class="view" id="v-cost">
-      <div class="eyebrow">06 · FM Bid Cost</div>
-      <div class="vhead"><h2>FM 입찰용 원가계산표</h2></div>
-      <p class="lead">연면적·설비로 법정 선임·운영 인력을 편성하고 4대보험·퇴직충당·안전보건관리비·낙찰하한율까지 반영한 월 원가 산출 구조. 2026년 단가·법령 근거와 <b>30,000㎡ 오피스</b> 실산출 예시를 정리했습니다.</p>
-
-      <div class="subhead">① 2026년 적용 단가 (점검일 2026-07-01)</div>
-      <div class="grid g2">
-        <div class="tblwrap"><table>
-          <thead><tr><th>기본임금 항목</th><th class="num">단가 / 요율</th></tr></thead>
-          <tbody>
-            <tr><td>최저임금 (시급)</td><td class="num">10,320원</td></tr>
-            <tr class="grp"><td colspan="2">보험료·부담금 (사업주 부담)</td></tr>
-            <tr><td>국민연금</td><td class="num">5%</td></tr>
-            <tr><td>건강보험</td><td class="num">3.6%</td></tr>
-            <tr><td>노인장기요양보험<br><span class="note">건강보험료의 13.14%</span></td><td class="num">13.14%</td></tr>
-            <tr><td>고용보험료</td><td class="num">1.5%</td></tr>
-            <tr><td>임금채권부담금</td><td class="num">0.06%</td></tr>
-          </tbody>
-        </table></div>
-        <div class="tblwrap"><table>
-          <thead><tr><th>엔지니어링 노임 (월 20.3일)</th><th class="num">특급 / 고급 / 중급 / 초급 (월)</th></tr></thead>
-          <tbody>
-            <tr><td>기계 (설비·소방·승강기·에너지)</td><td class="num">8,148,562 / 6,808,194 / 6,099,399 / 5,351,121</td></tr>
-            <tr><td>전기</td><td class="num">7,310,192 / 6,332,890 / 6,099,176 / 5,043,170</td></tr>
-            <tr><td>정보통신</td><td class="num">6,964,504 / 6,400,346 / 5,751,863 / 5,066,352</td></tr>
-            <tr><td>환경 (위생·안전)</td><td class="num">7,348,844 / 6,577,058 / 5,524,219 / 5,005,655</td></tr>
-            <tr class="grp"><td colspan="2">생산성 (법정 아님)</td></tr>
-            <tr><td>미화 1인당 담당면적</td><td class="num">한국 826㎡ · 일본 1,750㎡ · 미국 2,323㎡</td></tr>
-            <tr><td>HK 룸어텐던트 1인당</td><td class="num">특급 15실 · 3~4성 20~25 · 병원 20병상</td></tr>
-          </tbody>
-        </table></div>
-      </div>
-      <p class="note" style="margin-top:9px">최저임금: 고용노동부 2026년 확정고시(2025.8.5, +2.9%). 노임: 한국엔지니어링협회 2026 공표 일단가 × 월 20.3일.</p>
-
-      <div class="subhead">② 법정 선임 기준 (설비·규모 → 근거 법령)</div>
-      <div class="tblwrap"><table>
-        <thead><tr><th>선임 대상</th><th>선임 기준</th><th>근거 법령</th></tr></thead>
-        <tbody>
-          <tr><td>수전설비 (전기안전관리자)</td><td>75kW↑ 1명 · 5,000kW↑ +보조1 · 10,000kW↑ +보조2 (별표8)</td><td class="mono">전기안전관리법 §22</td></tr>
-          <tr><td>보일러 (검사대상기기관리자)</td><td>10t/h↓ 기능사 · 10~30 산업기사 · 30초과 기사</td><td class="mono">에너지이용합리화법 §40</td></tr>
-          <tr><td>냉동·공조 (고압가스)</td><td>20~100RT 신고 · 100RT↑ 허가 · 안전관리책임자 1명</td><td class="mono">고압가스안전관리법 §15</td></tr>
-          <tr><td>도시가스/LPG</td><td>4,000㎥/월 초과 → 총괄자+책임자 1명 · 이하 총괄자만</td><td class="mono">도시가스사업법 시행령 §15③</td></tr>
-          <tr><td>위험물 (유류탱크)</td><td>지정수량 1배↑ 선임 · 경유 1,000L 기준 (별표6)</td><td class="mono">위험물안전관리법 §15</td></tr>
-          <tr><td>승강기</td><td>설치 시 선임 1명 · 월 1회↑ 자체점검</td><td class="mono">승강기안전관리법 §29</td></tr>
-          <tr><td>정보통신설비 관리자</td><td>연면적 5천㎡↑ (공동주택·초중고·특수학교 제외) · 대학·유치원 포함</td><td class="mono">정보통신공사업법 §37의3</td></tr>
-          <tr><td>기계설비유지관리자</td><td>연면적·용도별 등급 · 특급·고급은 보조 1명</td><td class="mono">기계설비법 §19</td></tr>
-          <tr><td>소방안전관리자</td><td>규모별 등급(특급~3급) · 1.5만㎡마다 보조 1명</td><td class="mono">화재예방법 §24</td></tr>
-          <tr><td>안전관리자 / 보건관리자</td><td>상시 50명↑ 각 1명 · 300명↑ 전담 · 서비스·제조 1,000명↑ 안전 2명</td><td class="mono">산업안전보건법 §17·§18</td></tr>
-          <tr><td>대기·수질 환경기술인</td><td>대기배출시설·폐수배출시설 임명</td><td class="mono">대기환경보전법 §40 · 물환경보전법 §47</td></tr>
-          <tr><td>총괄재난관리자</td><td>50층↑ 또는 200m↑, 지하연계 복합건축물</td><td class="mono">초고층재난관리법</td></tr>
-        </tbody>
-      </table></div>
-      <p class="note" style="margin-top:9px">겸직(중복선임) 특례로 인원·비용 절감 가능 — 예: 소방 2·3급 ↔ 전기 겸직 가능 / 소방 특급·1급은 전담이라 불가.</p>
-
-      <div class="callout" style="margin-top:20px">항목별 금액을 넣어 실제 견적서를 만들려면 → <b>08 건물관리 견적</b> 탭에서 인건비·경비 항목에 금액을 입력하면 소계·순원가·공급가액·부가세·합계가 자동 계산됩니다.</div>
-      <p class="disc">단가 기준 — 최저임금은 고용노동부 2026 확정고시, 엔지니어링 노임은 한국엔지니어링협회 2026 공표단가(월 20.3일) 기준. 보험료·부담금은 2026 요율. 선임 정수·검사 주기·인력 편성은 건물 용도·규모·설비에 따라 달라 실계약 시 재산정이 필요합니다.</p>
-    </section>
-
-    <!-- ============ 07 CLEANING COST ============ -->
-    <section class="view" id="v-clean">
-      <div class="eyebrow">07 · Cleaning Contract Cost</div>
-      <div class="vhead"><h2>청소 도급비 계산표</h2></div>
-      <p class="lead">건물위생관리업(청소) 표준도급비 산출기준표(한국건물위생관리협회) 기반. 직급별 단가에 일반관리비·이윤·부가세를 단계 적용해 월·연 도급비를 추정합니다. 2026 상반기 단가 + <b>20,000㎡</b> 예시.</p>
-
-      <div class="subhead">① 직급별 표준단가 (2026 상반기, 월/1인, 검증값)</div>
-      <div class="tblwrap"><table>
-        <thead><tr><th>직급</th><th>구성</th><th class="num">월 단가</th></tr></thead>
-        <tbody>
-          <tr><td><b>공중위생관리책임자</b></td><td>인건비(기본급·제수당·상여·퇴직충당) + 복리후생비</td><td class="num">7,114,649원</td></tr>
-          <tr><td><b>남성 위생관리원</b></td><td>외곽·중량·기계·탑승장비 담당</td><td class="num">5,154,759원</td></tr>
-          <tr><td><b>여성 위생관리원</b></td><td>실작업면적(사무·공용부) 담당</td><td class="num">4,730,922원</td></tr>
-        </tbody>
-      </table></div>
-
-      <div class="subhead">② 인원 산정 &amp; 계산 공식</div>
-      <div class="grid g2">
-        <div class="card svc">
-          <h4>인원 산정</h4>
-          <ul>
-            <li>권장 위생관리원 = <b>연면적 ÷ 1인당 담당면적</b></li>
-            <li>1인당 담당면적 기준: 한국 826㎡(250평) · 일본 1,750㎡ · 미국 2,323㎡</li>
-            <li>남:여 = 1:5 (협회 적용사례 비율)</li>
-            <li>책임자 관리면적은 위생관리원 산정과 분리</li>
-          </ul>
-        </div>
-        <div class="card svc">
-          <h4>계산 단계 (근거 법령)</h4>
-          <ul>
-            <li>① 기본 도급비 = 직급별 단가 × 인원</li>
-            <li>② 일반관리비 <b>9%</b> — 국가계약법 시행규칙 §8</li>
-            <li>③ 공과잡비·이윤 <b>10%</b> — 동 시행규칙</li>
-            <li>④ 부가가치세 <b>10%</b> — 부가가치세법 §30</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="subhead">③ 산출 예시 — 연면적 20,000㎡ · 한국 기준(826㎡/인) · 25명</div>
-      <div class="tblwrap"><table>
-        <thead><tr><th>단계</th><th class="num">산정</th><th class="num">금액 (원)</th></tr></thead>
-        <tbody>
-          <tr class="grp"><td colspan="3">직접 인건비 (표준단가 × 인원 · 총 25명)</td></tr>
-          <tr><td>공중위생관리책임자 × 1</td><td class="num">7,114,649/인</td><td class="num">7,114,649</td></tr>
-          <tr><td>남성 위생관리원 × 4</td><td class="num">5,154,759/인</td><td class="num">20,619,036</td></tr>
-          <tr><td>여성 위생관리원 × 20</td><td class="num">4,730,922/인</td><td class="num">94,618,440</td></tr>
-          <tr class="sum"><td>기본 도급비 합계</td><td></td><td class="num">122,352,125</td></tr>
-          <tr><td>일반관리비</td><td class="num">9%</td><td class="num">11,011,691</td></tr>
-          <tr><td>공과잡비·이윤</td><td class="num">10%</td><td class="num">13,336,382</td></tr>
-          <tr class="sum"><td>공급가 (부가세 전)</td><td></td><td class="num">146,700,198</td></tr>
-          <tr><td>부가가치세</td><td class="num">10%</td><td class="num">14,670,020</td></tr>
-          <tr class="sum"><td>월 도급비 (추정)</td><td></td><td class="num">161,370,218</td></tr>
-        </tbody>
-      </table></div>
-      <div class="kpi">
-        <div class="k"><div class="lab">월 도급비</div><div class="val">₩161.4M <small>/월</small></div></div>
-        <div class="k"><div class="lab">연 환산 (×12)</div><div class="val">₩1,936.4M <small>/년</small></div></div>
-        <div class="k"><div class="lab">총 인원</div><div class="val">25 <small>명</small></div></div>
-      </div>
-      <p class="disc">출처 — ksmatefm.com/fm-cleaning-cost-estimator. 재료비(총도급비의 20% 정도)와 경비(기계장비 감가상각·보증보험·장애인고용부담금 등)는 건물·계약별로 달라 기본 산정에서 제외. 표준단가 기반 추정치이며 실제 도급비는 계약·낙찰률·현장 특성에 따라 상이.</p>
-    </section>
-
-    <!-- ============ 08 QUOTE BUILDER ============ -->
-    <section class="view" id="v-quote">
-      <div class="eyebrow">08 · Quote Builder</div>
-      <div class="vhead"><h2>건물관리 견적 (입력형)</h2></div>
-      <p class="lead">인건비·경비 항목에 금액을 입력하면 소계·순원가·공급가액·부가세·<b>견적 합계</b>가 자동으로 계산됩니다. 아래 숫자는 <b>예시값</b>(업무시설 30,000㎡ 기준·월)이니, 실제 건물 조건에 맞게 수정해 사용하세요.</p>
-
-      <div class="q-meta card">
-        <label>건물명 <input type="text" id="qm_name" placeholder="○○빌딩"></label>
-        <label>연면적 <input type="text" id="qm_area" placeholder="예: 30,000㎡"></label>
-        <label>작성일 <input type="text" id="qm_date" placeholder="2026-00-00"></label>
-        <div class="q-meta-btns">
-          <button class="chip" id="qExample">예시값 채우기</button>
-          <button class="chip" id="qClear">전체 0으로</button>
-          <button class="chip" id="qPrint">인쇄 / PDF</button>
-        </div>
-      </div>
-
-      <div class="tblwrap"><table class="qtable">
-        <thead><tr><th>구분 · 항목</th><th class="num" style="width:190px">금액 (원 · 월)</th></tr></thead>
-        <tbody>
-          <tr class="grp"><td colspan="2">A. 직접인건비</td></tr>
-          <tr><td>기본급 (직접 인력)</td><td class="num"><input class="qin" id="q_base" inputmode="numeric"></td></tr>
-          <tr><td>제수당 (연차·야간·휴일)</td><td class="num"><input class="qin" id="q_allow" inputmode="numeric"></td></tr>
-          <tr><td>상여금</td><td class="num"><input class="qin" id="q_bonus" inputmode="numeric"></td></tr>
-          <tr><td>퇴직충당금</td><td class="num"><input class="qin" id="q_retire" inputmode="numeric"></td></tr>
-          <tr><td>4대보험·부담금 (사업주)</td><td class="num"><input class="qin" id="q_ins" inputmode="numeric"></td></tr>
-          <tr class="sum"><td>직접인건비 소계 A</td><td class="num" id="q_A">0</td></tr>
-          <tr class="grp"><td colspan="2">B. 직접경비</td></tr>
-          <tr><td>외주비 (위탁 인력)</td><td class="num"><input class="qin" id="q_out" inputmode="numeric"></td></tr>
-          <tr><td>안전보건관리비</td><td class="num"><input class="qin" id="q_safe" inputmode="numeric"></td></tr>
-          <tr><td>경비 (법정검사·유지보수·장비·교육)</td><td class="num"><input class="qin" id="q_exp" inputmode="numeric"></td></tr>
-          <tr><td>여비·통신·소모품</td><td class="num"><input class="qin" id="q_misc" inputmode="numeric"></td></tr>
-          <tr class="sum"><td>직접경비 소계 B</td><td class="num" id="q_B">0</td></tr>
-          <tr class="sum"><td>순원가 (A + B)</td><td class="num" id="q_prime">0</td></tr>
-          <tr class="grp"><td colspan="2">C. 일반관리비 · 이윤 · 세액</td></tr>
-          <tr><td>일반관리비</td><td class="num"><input class="qin" id="q_admin" inputmode="numeric"></td></tr>
-          <tr><td>이윤</td><td class="num"><input class="qin" id="q_profit" inputmode="numeric"></td></tr>
-          <tr class="sum"><td>공급가액 (순원가 + 일반관리비 + 이윤)</td><td class="num" id="q_supply">0</td></tr>
-          <tr><td>부가가치세 (공급가액의 10%)</td><td class="num" id="q_vat">0</td></tr>
-          <tr class="total"><td>견적 합계 (부가세 포함)</td><td class="num" id="q_total">0</td></tr>
-        </tbody>
-      </table></div>
-
-      <div class="kpi">
-        <div class="k"><div class="lab">순원가 (월)</div><div class="val mono" id="q_k_prime">₩0</div></div>
-        <div class="k"><div class="lab">공급가액 (월)</div><div class="val mono" id="q_k_supply">₩0</div></div>
-        <div class="k"><div class="lab">견적 합계 (월)</div><div class="val mono" id="q_k_total">₩0</div></div>
-        <div class="k"><div class="lab">연 환산 (×12)</div><div class="val mono" id="q_k_year">₩0</div></div>
-      </div>
-      <p class="disc">국가계약 원가계산 구조 — 직접인건비 + 직접경비 → 순원가 → 일반관리비 → 이윤 → 공급가액 → 부가세 → 견적 합계. 일반관리비·이윤 요율, 인력 편성, 경비 주기는 건물 조건·계약 방식에 따라 달라지므로 각 금액을 직접 조정해 사용하세요. (입력값은 브라우저에만 있고 저장·전송되지 않습니다.)</p>
+      <p class="disc">원본 — ksmatefm.com/fm-self-diagnosis-checklist (50문항·150점). 클리니어빌딩 미팅용으로 재구성. 진단 결과는 관리 수준 참고 지표이며 법정 적합성을 보장하지 않음. 법정 의무는 건물 용도·규모·적용 법령에 따라 별도 확인.</p>
     </section>
   </main>
 </div>
@@ -1159,39 +982,8 @@ function clScore(){
 }
 clWrap.addEventListener('change',clScore);
 document.getElementById('clReset').onclick=()=>{clWrap.querySelectorAll('input:checked').forEach(r=>r.checked=false);clScore();};
-document.getElementById('clPrint').onclick=()=>window.print();
+document.getElementById('clPrint').onclick=()=>{try{window.print();}catch(e){alert('미리보기에서는 인쇄가 제한될 수 있습니다. 키보드 Ctrl+P(Mac ⌘P)로 인쇄·PDF 저장해 주세요.');}};
 clScore();
-
-/* ================= QUOTE BUILDER ================= */
-const QEX={q_base:324523257,q_allow:16226163,q_bonus:0,q_retire:28395785,q_ins:37030545,
-  q_out:1200000,q_safe:6092636,q_exp:12354167,q_misc:12185272,q_admin:21900391,q_profit:45990822};
-const QIN=['q_base','q_allow','q_bonus','q_retire','q_ins','q_out','q_safe','q_exp','q_misc','q_admin','q_profit'];
-const won=n=>'₩'+Math.round(n).toLocaleString('ko-KR');
-const wonM=n=>{const m=n/1e6; return '₩'+(Math.abs(m)>=100?Math.round(m).toLocaleString('ko-KR'):(Math.round(m*10)/10).toLocaleString('ko-KR'))+'M';};
-function qval(id){const v=parseFloat((document.getElementById(id).value||'').replace(/[^0-9.\-]/g,''));return isNaN(v)?0:v;}
-function qCalc(){
-  const A=qval('q_base')+qval('q_allow')+qval('q_bonus')+qval('q_retire')+qval('q_ins');
-  const B=qval('q_out')+qval('q_safe')+qval('q_exp')+qval('q_misc');
-  const prime=A+B, supply=prime+qval('q_admin')+qval('q_profit');
-  const vat=Math.round(supply*0.1), total=supply+vat;
-  const put=(id,v)=>document.getElementById(id).textContent=won(v);
-  put('q_A',A);put('q_B',B);put('q_prime',prime);put('q_supply',supply);put('q_vat',vat);put('q_total',total);
-  document.getElementById('q_k_prime').textContent=wonM(prime);
-  document.getElementById('q_k_supply').textContent=wonM(supply);
-  document.getElementById('q_k_total').textContent=wonM(total);
-  document.getElementById('q_k_year').textContent=wonM(total*12);
-}
-function qSet(obj){QIN.forEach(id=>{document.getElementById(id).value=(obj[id]||0).toLocaleString('ko-KR');});qCalc();}
-QIN.forEach(id=>{
-  const el=document.getElementById(id);
-  el.addEventListener('input',qCalc);
-  el.addEventListener('focus',()=>{const v=qval(id);el.value=v?String(v):'';});
-  el.addEventListener('blur',()=>{el.value=qval(id).toLocaleString('ko-KR');});
-});
-document.getElementById('qExample').onclick=()=>qSet(QEX);
-document.getElementById('qClear').onclick=()=>qSet({});
-document.getElementById('qPrint').onclick=()=>window.print();
-qSet(QEX);
 </script>
 
 </body>
