@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>:root{color-scheme:light dark}*{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>클리니어빌딩 FM 자료집</title>
+<title>클리니어빌딩 서비스 정리</title>
 <meta name="description" content="KSmate FM 사이트 크롤링을 클리니어빌딩 서비스 소개서 제작용으로 항목별 정리한 참고 자료집">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
@@ -129,6 +129,20 @@
   .callout{border-left:3px solid var(--accent);background:var(--surface-2);padding:13px 16px;border-radius:0 10px 10px 0;font-size:13.5px;color:var(--ink-soft);}
   .callout.warn{border-color:var(--warn);}
   .callout.dgr{border-color:var(--danger);}
+
+  .pagenote{position:relative;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 32%,var(--line));
+    border-radius:14px;padding:16px 44px 16px 20px;margin-bottom:26px;}
+  .pn-title{font-weight:700;font-size:15px;margin-bottom:6px;color:var(--accent-ink);}
+  .pagenote>p{margin:0 0 11px;font-size:13.5px;color:var(--ink-soft);}
+  .pn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  .pn-list li{font-size:13.3px;color:var(--ink-soft);display:flex;gap:10px;align-items:baseline;line-height:1.6;}
+  .pn-list li b{color:var(--ink);}
+  .pn-badge{flex:none;font-family:var(--num);font-size:11px;font-weight:600;border-radius:999px;padding:3px 11px;}
+  .pn-badge.use{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok);}
+  .pn-badge.ref{background:color-mix(in srgb,var(--gold) 20%,transparent);color:var(--gold);}
+  .pn-x{position:absolute;top:11px;right:13px;border:0;background:transparent;color:var(--muted);
+    font-size:20px;line-height:1;cursor:pointer;padding:2px 6px;border-radius:7px;}
+  .pn-x:hover{background:color-mix(in srgb,var(--ink) 9%,transparent);color:var(--ink);}
 
   /* ---------- business area ---------- */
   .bizhero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);color:#fff;
@@ -328,7 +342,7 @@
 
 <div class="topbar">
   <div class="brand">
-    <b>클리니어빌딩 · FM 자료집</b>
+    <b>클리니어빌딩 서비스 정리</b>
     <small>SERVICE INTRO REFERENCE</small>
   </div>
   <div class="src">crawled from ksmatefm.com<br>2026-09-11 · 소개서 제작 참고용</div>
